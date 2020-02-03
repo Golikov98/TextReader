@@ -46,13 +46,9 @@ namespace TextReaderUI
             var symbolsList = new List<char>(symbolsArray);
 
             text.SymbolMark = DeletePunctuationMarkTextBox.Text.ToCharArray();
-            //text.SymbolMark = symbol;
 
             for (var i = 0; i < symbolsList.Count; i++)
             {
-                //Записываем в массив символ, введенный в DeletePunctuationMarkTextBox
-                //char[] symbol = text.SymbolMark.ToCharArray();
-
                 //Если элемент списка symbolsList равен символу массива symbol
                 if (symbolsList[i] == text.SymbolMark[0])
                 {
@@ -73,12 +69,22 @@ namespace TextReaderUI
 
         private void SaveFileButton_Click(object sender, EventArgs e)
         {
+            //Присваеваем FileText данные из FileTextTextBox
+            text.FileText = FileTextTextBox.Text;
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            //Указываем формат файла, в который будут сохраняться данные
+            saveFileDialog.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string fileName = saveFileDialog.FileName;
                 File.WriteAllText(fileName, text.FileText);
             }
+
+            //Очищаем FileTextTextBox
+            FileTextTextBox.Clear();
         }
     }
 }
