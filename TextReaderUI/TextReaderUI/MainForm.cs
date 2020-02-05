@@ -26,6 +26,7 @@ namespace TextReaderUI
 
         }
 
+        //Кнопка, вызывающая OpenFileDialog
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -37,7 +38,35 @@ namespace TextReaderUI
             }
         }
 
+        //Кнопка, удаляющая знак препинания из текста файла
         private void DeletePunctuationMarkButton_Click(object sender, EventArgs e)
+        {
+            DeletePunctuationSymbolMethod();
+        }
+
+        //Кнопка, вызывающая SaveFileDialog
+        private void SaveFileButton_Click(object sender, EventArgs e)
+        {
+            //Присваеваем FileText данные из FileTextTextBox
+            text.FileText = FileTextTextBox.Text;
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            //Указываем формат файла, в который будут сохраняться данные
+            saveFileDialog.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = saveFileDialog.FileName;
+                File.WriteAllText(fileName, text.FileText);
+            }
+
+            //Очищаем FileTextTextBox
+            FileTextTextBox.Clear();
+        }
+
+        //Метод, удаляющий знак препинания из текста файла
+        private void DeletePunctuationSymbolMethod()
         {
             //Переводим строку из файла в массив элементов 
             char[] symbolsArray = text.FileText.ToCharArray();
@@ -67,24 +96,48 @@ namespace TextReaderUI
             DeletePunctuationMarkTextBox.Clear();
         }
 
-        private void SaveFileButton_Click(object sender, EventArgs e)
+        private void DeleteWordsSpecifiedLength()
         {
-            //Присваеваем FileText данные из FileTextTextBox
+            //Записываем в text.FileText данные из FileTextTextBox
             text.FileText = FileTextTextBox.Text;
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //Записываем в переменную LengthDeleteWords содержимое DeleteWordsLengthTextBox
+            string LengthDeleteWords = DeleteWordsLengthTextBox.Text;
 
-            //Указываем формат файла, в который будут сохраняться данные
-            saveFileDialog.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            //Считываем данные из строки и переводим в тип int
+            var currentLength = int.Parse(LengthDeleteWords);
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            // Передаем данные из переменной currentLength в text.MinWordLength
+            text.MinWordLength = currentLength;
+
+            //Разделяем строку на подстроки по пробелу и записываем полученные подстроки в массив строк words
+            string[] words = text.FileText.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            //Записываем массив строк в список wordsList
+            var wordsList = new List<string>(words);
+
+            for (int i=0; i < wordsList.Count; i++)
             {
-                string fileName = saveFileDialog.FileName;
-                File.WriteAllText(fileName, text.FileText);
+                if (wordsList[i].Length < text.MinWordLength)
+                {
+                    wordsList.RemoveAt(i);
+                }
+                else if (wordsList[i].Length >= text.MinWordLength)
+                {
+                    i++;
+                }
             }
 
-            //Очищаем FileTextTextBox
-            FileTextTextBox.Clear();
+            //Преобразуем список wordsList в строку fileText
+            text.FileText = String.Join(" ", wordsList);
+
+            //Выводим строку fileText в FileTextTextBox
+            FileTextTextBox.Text = text.FileText;
+        }
+
+        private void DeleteLongerWordButton_Click(object sender, EventArgs e)
+        {
+            DeleteWordsSpecifiedLength();
         }
     }
 }

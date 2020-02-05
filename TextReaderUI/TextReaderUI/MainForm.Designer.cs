@@ -31,7 +31,7 @@
             this.OpenFileButton = new System.Windows.Forms.Button();
             this.SaveFileButton = new System.Windows.Forms.Button();
             this.DeletePunctuationMarkTextBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DeleteWordsLengthTextBox = new System.Windows.Forms.TextBox();
             this.DeletePunctuationMarkLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DeletePunctuationMarkButton = new System.Windows.Forms.Button();
@@ -74,15 +74,15 @@
             this.DeletePunctuationMarkTextBox.Size = new System.Drawing.Size(103, 23);
             this.DeletePunctuationMarkTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // DeleteWordsLengthTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(560, 64);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 23);
-            this.textBox2.TabIndex = 3;
+            this.DeleteWordsLengthTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DeleteWordsLengthTextBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteWordsLengthTextBox.Location = new System.Drawing.Point(560, 64);
+            this.DeleteWordsLengthTextBox.Multiline = true;
+            this.DeleteWordsLengthTextBox.Name = "DeleteWordsLengthTextBox";
+            this.DeleteWordsLengthTextBox.Size = new System.Drawing.Size(137, 23);
+            this.DeleteWordsLengthTextBox.TabIndex = 3;
             // 
             // DeletePunctuationMarkLabel
             // 
@@ -122,6 +122,7 @@
             this.DeleteLongerWordButton.TabIndex = 7;
             this.DeleteLongerWordButton.Text = "Delete";
             this.DeleteLongerWordButton.UseVisualStyleBackColor = true;
+            this.DeleteLongerWordButton.Click += new System.EventHandler(this.DeleteLongerWordButton_Click);
             // 
             // FileTextTextBox
             // 
@@ -156,7 +157,7 @@
             this.Controls.Add(this.DeletePunctuationMarkButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DeletePunctuationMarkLabel);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.DeleteWordsLengthTextBox);
             this.Controls.Add(this.DeletePunctuationMarkTextBox);
             this.Controls.Add(this.SaveFileButton);
             this.Controls.Add(this.OpenFileButton);
@@ -173,7 +174,7 @@
         private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.Button SaveFileButton;
         private System.Windows.Forms.TextBox DeletePunctuationMarkTextBox;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox DeleteWordsLengthTextBox;
         private System.Windows.Forms.Label DeletePunctuationMarkLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button DeletePunctuationMarkButton;

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TextReader
 {
+    /// <summary>
+    /// Класс Text, содержащий поля _fileText, _symbolMark
+    /// </summary>
     public class Text
     {
         private string _fileText;
@@ -122,6 +125,20 @@ namespace TextReader
                     else { throw new ArgumentException("Неверный символов!"); }
                 }
                 else { throw new ArgumentException("Неверное колличество символов!"); }
+            }
+        }
+
+        private int _minWordLength;
+
+        public int MinWordLength
+        {
+            get
+            {
+                return _minWordLength;
+            }
+            set
+            {
+                _minWordLength = value;
             }
         }
     }
