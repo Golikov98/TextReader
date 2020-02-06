@@ -27,7 +27,7 @@ namespace TextReader
 
         private char[] _symbolMark;
 
-        public char[] SymbolMark
+        public char[] SymbolMark 
         {
             get
             {
@@ -35,96 +35,7 @@ namespace TextReader
             }
             set
             {
-                _symbolMark = value;
-                if (SymbolMark.Length <= 1)
-                {
-                    if (SymbolMark[0] == ',')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '.')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '!')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '?')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '@')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '"')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == ';')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '%')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == ':')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '^')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '(')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == ')')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '*')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '+')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '-')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '/')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '=')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '[')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == ']')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '{')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else if (SymbolMark[0] == '}')
-                    {
-                        _symbolMark[0] = SymbolMark[0];
-                    }
-                    else { throw new ArgumentException("Неверный символов!"); }
-                }
-                else { throw new ArgumentException("Неверное колличество символов!"); }
+                _symbolMark = value;                  
             }
         }
 
