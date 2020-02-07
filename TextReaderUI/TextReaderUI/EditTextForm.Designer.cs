@@ -331,6 +331,7 @@
             this.Controls.Add(this.OKButton);
             this.Name = "EditTextForm";
             this.Text = "EditTextForm";
+            this.Load += new System.EventHandler(this.EditTextForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

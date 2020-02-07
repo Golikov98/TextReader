@@ -211,5 +211,10 @@ namespace TextReaderUI
                 DeleteSymbolsMark[21] = '!';
             }
         }
+
+        private void EditTextForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

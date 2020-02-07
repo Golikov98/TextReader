@@ -40,11 +40,10 @@
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removePunctuationMarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeShorterLengthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditTextButton = new System.Windows.Forms.Button();
+            this.EditTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TextReaderMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +129,7 @@
             this.OpenFolderToolStripMenuItem.Name = "OpenFolderToolStripMenuItem";
             this.OpenFolderToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.OpenFolderToolStripMenuItem.Text = "Open folder";
+            this.OpenFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenFolderToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
@@ -155,23 +155,10 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.removePunctuationMarksToolStripMenuItem,
-            this.removeShorterLengthToolStripMenuItem});
+            this.EditTextToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // removePunctuationMarksToolStripMenuItem
-            // 
-            this.removePunctuationMarksToolStripMenuItem.Name = "removePunctuationMarksToolStripMenuItem";
-            this.removePunctuationMarksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.removePunctuationMarksToolStripMenuItem.Text = "Remove punctuation marks";
-            // 
-            // removeShorterLengthToolStripMenuItem
-            // 
-            this.removeShorterLengthToolStripMenuItem.Name = "removeShorterLengthToolStripMenuItem";
-            this.removeShorterLengthToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.removeShorterLengthToolStripMenuItem.Text = "Remove shorter length";
             // 
             // aboutToolStripMenuItem
             // 
@@ -197,6 +184,13 @@
             this.EditTextButton.Text = "Edit text";
             this.EditTextButton.UseVisualStyleBackColor = false;
             this.EditTextButton.Click += new System.EventHandler(this.EditTextButton_Click);
+            // 
+            // EditTextToolStripMenuItem
+            // 
+            this.EditTextToolStripMenuItem.Name = "EditTextToolStripMenuItem";
+            this.EditTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EditTextToolStripMenuItem.Text = "Edit text";
+            this.EditTextToolStripMenuItem.Click += new System.EventHandler(this.EditTextToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -232,12 +226,11 @@
         private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removePunctuationMarksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeShorterLengthToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         private System.Windows.Forms.Button EditTextButton;
+        private System.Windows.Forms.ToolStripMenuItem EditTextToolStripMenuItem;
     }
 }
 

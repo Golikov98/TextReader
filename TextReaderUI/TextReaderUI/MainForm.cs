@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TextReader;
 using System.IO;
+using System.Threading;
 
 namespace TextReaderUI
 {
@@ -87,7 +88,7 @@ namespace TextReaderUI
             //Записываем массив строк в список wordsList
             var wordsList = new List<string>(words);
 
-            for (int i=0; i < wordsList.Count; i++)
+            for (int i = 0; i < wordsList.Count; i++)
             {
                 if (wordsList[i].Length <= currentMinimumLength)
                 {
@@ -193,6 +194,105 @@ namespace TextReaderUI
 
         //Кнопка для вывода формы редактирования текста
         private void EditTextButton_Click(object sender, EventArgs e)
+        {
+            var EditTextForm = new EditTextForm();
+            EditTextForm.ShowDialog();
+            if (EditTextForm.DialogResult == DialogResult.OK)
+            {
+                DeleteSymbolArray = EditTextForm.currentText.SymbolMark;
+                DeletePunctuationSymbolMethod();
+
+                currentMinimumLength = EditTextForm.currentText.MinWordLength;
+                DeleteWordsSpecifiedLength();
+            }
+        }
+
+        private void ProcessFolderFilesMethod()
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Записываем в переменную путь к выбранно папке
+                string folderName = folderBrowserDialog.SelectedPath;
+
+                //Записываем в массив пути к файлам в указанной папке
+                string[] folderFiles = Directory.GetFiles(folderName, "*.txt", SearchOption.AllDirectories);
+
+                DialogResult result = MessageBox.Show("Process a folder?", "Process", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    var editTextForm = new EditTextForm();
+                    editTextForm.ShowDialog();
+
+                    if (editTextForm.DialogResult == DialogResult.OK)
+                    { 
+                        DeleteSymbolArray = editTextForm.currentText.SymbolMark;
+                        currentMinimumLength = editTextForm.currentText.MinWordLength;
+
+                        DialogResult SaveFilesInFolder = MessageBox.Show("Save files in folder?", "Save", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (SaveFilesInFolder == DialogResult.OK)
+                        {
+                            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                //Записываем в переменную путь к выбранной для сохранения папке
+                                string folderSaveName = folderBrowserDialog.SelectedPath;
+
+                                for (var i = 0; i < folderFiles.Length; i++)
+                                {
+                                    string folderSaveNameInFolder = Path.GetFileName(folderFiles[i]);
+                                    string fileTextInFolder = File.ReadAllText(folderFiles[i]);
+
+                                    char[] symbolsArray = fileTextInFolder.ToCharArray();
+                                    var symbolsList = new List<char>(symbolsArray);
+                                    for (int z = 0; z < symbolsList.Count; z++)
+                                    {
+                                        for (int j = 0; j < DeleteSymbolArray.Length; j++)
+                                        {
+                                            //Если элемент списка symbolsList равен символу массива DeleteSymbolArray
+                                            if (symbolsList[z] == DeleteSymbolArray[j])
+                                            {
+                                                //Удаляем элемент списка
+                                                symbolsList.RemoveAt(z);
+
+                                                z = 0;
+                                            }
+                                        }
+                                    }
+                                    fileTextInFolder = String.Join("", symbolsList);        
+                                    string[] words = fileTextInFolder.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                                    var wordsList = new List<string>(words);
+                                    for (int q = 0; q < wordsList.Count; q++)
+                                    {
+                                        if (wordsList[q].Length <= currentMinimumLength)
+                                        {
+                                            wordsList.RemoveAt(q);
+                                            q = 0;
+                                        }
+
+                                        if (wordsList[q].Length <= currentMinimumLength)
+                                        {
+                                            wordsList.RemoveAt(q);
+                                        }
+                                    }
+                                    fileTextInFolder = String.Join(" ", wordsList);
+
+                                    var file = Path.Combine(folderSaveName, folderSaveNameInFolder);
+                                    File.WriteAllText(file, fileTextInFolder);                               
+                                }
+                                DialogResult completed = MessageBox.Show("Process completed!", "Complet", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void OpenFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessFolderFilesMethod();
+        }
+
+        private void EditTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var EditTextForm = new EditTextForm();
             EditTextForm.ShowDialog();
