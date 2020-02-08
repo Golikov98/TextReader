@@ -125,7 +125,11 @@ namespace TextReader
                 {
                     _symbolMark = SymbolMark;
                 }
-                else{ throw new ArgumentException("Неверное значение!"); }
+                else if (SymbolMark[21] == ' ')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else { throw new ArgumentException("Неверное значение!"); }
 
             }
 
