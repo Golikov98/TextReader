@@ -9,7 +9,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{569336FC-1F5C-417F-A041-C015E075D4FD}
+AppId={{13F95D1A-13BA-4FCD-974F-91BED9290B05}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -32,12 +32,13 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "..\bin\Release\TextReaderUI.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\nunit.engine.api.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\nunit.engine.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\NUnit3.TestAdapter.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\TextReader.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\bin\Release\TextReaderUI.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\bin\Release\TextReaderUI.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\TextReader.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\NUnit3.TestAdapter.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\nunit.engine.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\nunit.engine.api.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Icons\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
