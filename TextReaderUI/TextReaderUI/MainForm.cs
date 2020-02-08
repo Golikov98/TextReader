@@ -14,7 +14,7 @@ using System.Threading;
 namespace TextReaderUI
 {
     /// <summary>
-    /// Главная форма взаимодействия с пользователем MainForm
+    /// Главная форма взаимодействия с пользователем MainForm.
     /// </summary>
     public partial class MainForm : Form
     {
