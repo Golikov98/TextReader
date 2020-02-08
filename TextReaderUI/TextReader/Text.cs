@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TextReader
 {
     /// <summary>
-    /// Класс Text, содержащий поля _fileText, _symbolMark
+    /// Класс Text, содержащий поля _fileText, _symbolMark, _minWordLength.
     /// </summary>
     public class Text
     {

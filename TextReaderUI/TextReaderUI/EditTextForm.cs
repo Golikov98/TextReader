@@ -11,6 +11,9 @@ using TextReader;
 
 namespace TextReaderUI
 {
+    /// <summary>
+    /// Форма выбора параметров редактирования текста файла.
+    /// </summary>
     public partial class EditTextForm : Form
     {
         public Text currentText = new Text();
