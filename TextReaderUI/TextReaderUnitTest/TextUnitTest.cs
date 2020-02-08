@@ -37,10 +37,11 @@ namespace TextReaderUnitTest
         [Test(Description = "Присвоение неверного символа в массив элементов.")]
         public void TestSymbolMarkSet_IncorrectValue()
         {
-            var incorrectArray = new char[] { 'a', 'b', 'c', 'd' };
             var text = new Text();
+            char[] TestArray = new char[22];
+            TestArray[0] = 'f';
 
-            Assert.Throws<ArgumentException>(() => { text.SymbolMark = incorrectArray; }, "Должно возникать исключение");
+            Assert.Throws<ArgumentException>(() => { text.SymbolMark = TestArray; }, "Должно возникать исключение");
         }
 
         [Test(Description = "Позитивный тест геттера MinWordLength")]

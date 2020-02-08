@@ -27,7 +27,7 @@ namespace TextReader
 
         private char[] _symbolMark;
 
-        public char[] SymbolMark 
+        public char[] SymbolMark
         {
             get
             {
@@ -35,80 +35,101 @@ namespace TextReader
             }
             set
             {
-                _symbolMark = value;  
-                for (var i = 0; i < _symbolMark.Length; i++)
+                _symbolMark = value;
+                
+                if (SymbolMark[0] == '.')
                 {
-                    if(_symbolMark[i] != '.')
-                    {
-                        if (_symbolMark[i] != ',')
-                        {
-                            if (_symbolMark[i] != '-')
-                            {
-                                if (_symbolMark[i] != ';')
-                                {
-                                    if (_symbolMark[i] != '!')
-                                    {
-                                        if (_symbolMark[i] != '?')
-                                        {
-                                            if (_symbolMark[i] != '@')
-                                            {
-                                                if (_symbolMark[i] != '#')
-                                                {
-                                                    if (_symbolMark[i] != '*')
-                                                    {
-                                                        if (_symbolMark[i] != '"')
-                                                        {
-                                                            if (_symbolMark[i] != '/')
-                                                            {
-                                                                if (_symbolMark[i] != ':')
-                                                                {
-                                                                    if (_symbolMark[i] != '[')
-                                                                    {
-                                                                        if (_symbolMark[i] != ']')
-                                                                        {
-                                                                            if (_symbolMark[i] != '<')
-                                                                            {
-                                                                                if (_symbolMark[i] != '>')
-                                                                                {
-                                                                                    if (_symbolMark[i] != '(')
-                                                                                    {
-                                                                                        if (_symbolMark[i] != ')')
-                                                                                        {
-                                                                                            if (_symbolMark[i] != '{')
-                                                                                            {
-                                                                                                if (_symbolMark[i] != '}')
-                                                                                                {
-                                                                                                    if (_symbolMark[i] != '~')
-                                                                                                    {
-                                                                                                        if (_symbolMark[i] != '&')
-                                                                                                        {
-                                                                                                            throw new ArgumentException("Неверный символ!");
-                                                                                                        }
-                                                                                                    }
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    _symbolMark = SymbolMark;
                 }
-            }
-        }
+                else if(SymbolMark[1] == ',')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[2] == ':')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[3] == '-')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[4] == '*')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[5] == '{')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[6] == '}')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[7] == '(')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[8] == ')')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[9] == ';')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[10] == '?')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[11] == '#')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[12] == '@')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[13] == '/')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[14] == '&')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[15] == '~')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[16] == '<')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[17] == '>')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[18] == '[')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[19] == ']')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[20] == '"')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else if (SymbolMark[21] == '!')
+                {
+                    _symbolMark = SymbolMark;
+                }
+                else{ throw new ArgumentException("Неверное значение!"); }
 
+            }
+
+        }
         private int _minWordLength;
 
         public int MinWordLength
