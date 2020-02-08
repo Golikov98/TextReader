@@ -35,7 +35,77 @@ namespace TextReader
             }
             set
             {
-                _symbolMark = value;                  
+                _symbolMark = value;  
+                for (var i = 0; i < _symbolMark.Length; i++)
+                {
+                    if(_symbolMark[i] != '.')
+                    {
+                        if (_symbolMark[i] != ',')
+                        {
+                            if (_symbolMark[i] != '-')
+                            {
+                                if (_symbolMark[i] != ';')
+                                {
+                                    if (_symbolMark[i] != '!')
+                                    {
+                                        if (_symbolMark[i] != '?')
+                                        {
+                                            if (_symbolMark[i] != '@')
+                                            {
+                                                if (_symbolMark[i] != '#')
+                                                {
+                                                    if (_symbolMark[i] != '*')
+                                                    {
+                                                        if (_symbolMark[i] != '"')
+                                                        {
+                                                            if (_symbolMark[i] != '/')
+                                                            {
+                                                                if (_symbolMark[i] != ':')
+                                                                {
+                                                                    if (_symbolMark[i] != '[')
+                                                                    {
+                                                                        if (_symbolMark[i] != ']')
+                                                                        {
+                                                                            if (_symbolMark[i] != '<')
+                                                                            {
+                                                                                if (_symbolMark[i] != '>')
+                                                                                {
+                                                                                    if (_symbolMark[i] != '(')
+                                                                                    {
+                                                                                        if (_symbolMark[i] != ')')
+                                                                                        {
+                                                                                            if (_symbolMark[i] != '{')
+                                                                                            {
+                                                                                                if (_symbolMark[i] != '}')
+                                                                                                {
+                                                                                                    if (_symbolMark[i] != '~')
+                                                                                                    {
+                                                                                                        if (_symbolMark[i] != '&')
+                                                                                                        {
+                                                                                                            throw new ArgumentException("Неверный символ!");
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 

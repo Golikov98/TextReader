@@ -299,6 +299,8 @@
             this.MinimumWordLengthTextBox.Name = "MinimumWordLengthTextBox";
             this.MinimumWordLengthTextBox.Size = new System.Drawing.Size(100, 20);
             this.MinimumWordLengthTextBox.TabIndex = 22;
+            this.MinimumWordLengthTextBox.TextChanged += new System.EventHandler(this.MinimumWordLengthTextBox_TextChanged);
+            this.MinimumWordLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MinimumWordLengthTextBox_KeyPress);
             // 
             // EditTextForm
             // 

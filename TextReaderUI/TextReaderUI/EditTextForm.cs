@@ -15,6 +15,7 @@ namespace TextReaderUI
     {
         public Text currentText = new Text();
         char[] DeleteSymbolsMark = new char[22];
+        string wordsLength;
 
         public EditTextForm()
         {
@@ -28,13 +29,19 @@ namespace TextReaderUI
             {
                 Text text = new Text();
 
+                //Передаем данные к класс бизнес-логики для проверки
                 text.SymbolMark = DeleteSymbolsMark;
+
+                //Передаем данные в абстрактный класс
                 currentText.SymbolMark = DeleteSymbolsMark;
 
-                string MinimumLength = MinimumWordLengthTextBox.Text;
+                string MinimumLength = wordsLength;
                 try
                 {
+                    //Передаем данные к класс бизнес-логики для проверки
                     text.MinWordLength = int.Parse(MinimumLength);
+
+                    //Передаем данные в абстрактный класс
                     currentText.MinWordLength = int.Parse(MinimumLength);
                 }
                 catch { }
@@ -215,6 +222,22 @@ namespace TextReaderUI
         private void EditTextForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MinimumWordLengthTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+            wordsLength = MinimumWordLengthTextBox.Text;
+        }
+
+        //Ограничение на вводимые символы в MinimumWordLengthTextBox
+        private void MinimumWordLengthTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
