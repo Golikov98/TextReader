@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD193D1C-181A-438E-892D-6363F47D8F18}</ProjectGuid>
+    <ProjectGuid>{3DFD7D8A-987E-44DE-BB28-6EF399ADFCA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TextReader</RootNamespace>
-    <AssemblyName>TextReader</AssemblyName>
+    <RootNamespace>TextReaderUnitTest</RootNamespace>
+    <AssemblyName>TextReaderUnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -48,8 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TextUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
