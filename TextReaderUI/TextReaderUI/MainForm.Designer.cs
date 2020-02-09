@@ -40,10 +40,10 @@
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditTextButton = new System.Windows.Forms.Button();
-            this.EditTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TextReaderMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,6 +160,13 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
+            // EditTextToolStripMenuItem
+            // 
+            this.EditTextToolStripMenuItem.Name = "EditTextToolStripMenuItem";
+            this.EditTextToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.EditTextToolStripMenuItem.Text = "Edit text";
+            this.EditTextToolStripMenuItem.Click += new System.EventHandler(this.EditTextToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -176,6 +183,8 @@
             // 
             // EditTextButton
             // 
+            this.EditTextButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.EditTextButton.BackColor = System.Drawing.SystemColors.Info;
             this.EditTextButton.Location = new System.Drawing.Point(0, 333);
             this.EditTextButton.Name = "EditTextButton";
@@ -184,13 +193,6 @@
             this.EditTextButton.Text = "Edit text";
             this.EditTextButton.UseVisualStyleBackColor = false;
             this.EditTextButton.Click += new System.EventHandler(this.EditTextButton_Click);
-            // 
-            // EditTextToolStripMenuItem
-            // 
-            this.EditTextToolStripMenuItem.Name = "EditTextToolStripMenuItem";
-            this.EditTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.EditTextToolStripMenuItem.Text = "Edit text";
-            this.EditTextToolStripMenuItem.Click += new System.EventHandler(this.EditTextToolStripMenuItem_Click);
             // 
             // MainForm
             // 

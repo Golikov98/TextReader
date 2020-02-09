@@ -55,6 +55,7 @@
             // 
             // OKButton
             // 
+            this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.OKButton.BackColor = System.Drawing.Color.PaleTurquoise;
             this.OKButton.Location = new System.Drawing.Point(12, 326);
             this.OKButton.Name = "OKButton";
@@ -66,6 +67,7 @@
             // 
             // CancleButton
             // 
+            this.CancleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancleButton.BackColor = System.Drawing.Color.PaleTurquoise;
             this.CancleButton.Location = new System.Drawing.Point(497, 326);
             this.CancleButton.Name = "CancleButton";
