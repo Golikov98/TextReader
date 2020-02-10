@@ -372,5 +372,19 @@ namespace TextReaderUI
                 DeleteWordsSpecifiedLength();
             }
         }
+
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+
+            }
+        }
+
+        private void informationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var aboutForm = new AboutForm();
+            aboutForm.Show();
+        }
     }
 }

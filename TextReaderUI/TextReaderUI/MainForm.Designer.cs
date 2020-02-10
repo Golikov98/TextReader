@@ -178,8 +178,9 @@
             // informationToolStripMenuItem
             // 
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.informationToolStripMenuItem.Text = "Information - F1";
+            this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
             // EditTextButton
             // 
@@ -209,6 +210,7 @@
             this.Name = "MainForm";
             this.Text = "TextReader";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.TextReaderMenuStrip.ResumeLayout(false);
             this.TextReaderMenuStrip.PerformLayout();
             this.ResumeLayout(false);
