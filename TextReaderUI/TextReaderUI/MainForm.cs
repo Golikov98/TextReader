@@ -377,7 +377,8 @@ namespace TextReaderUI
         {
             if (e.KeyData == Keys.F1)
             {
-
+                var aboutForm = new AboutForm();
+                aboutForm.Show();
             }
         }
 
